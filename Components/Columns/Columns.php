@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Neos\Demo\Components\Columns;
 
-use PackageFactory\PHPComponentEngine as _;
+use PackageFactory\ComponentEngine as _;
 
 #[\Neos\Flow\Annotations\Proxy(false)]
 final readonly class Columns implements _\ComponentInterface

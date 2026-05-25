@@ -26,7 +26,8 @@
     "autoload": {
         "psr-4": {
             "Neos\\Demo\\": "Classes",
-            "Neos\\Demo\\Components\\": "Components"
+            "Neos\\Demo\\Components\\": "Components",
+            "Neos\\Demo\\NodeTypes\\": "NodeTypes"
         }
     },
     "extra": {

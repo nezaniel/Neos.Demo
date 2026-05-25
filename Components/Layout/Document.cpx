@@ -1,0 +1,41 @@
+from "./DocumentMode.cpx" import { DocumentMode }
+
+export component Document {
+    title: string
+    stylesheets: slot
+    headScripts: slot
+    neosHeaderStuff: slot
+    content: slot
+    bodyScripts: slot
+    neosBodyStuff: slot
+    mode: DocumentMode
+
+    render <>
+        <!DOCTYPE html />
+        <html>
+            <!--
+                This website is powered by Neos, the Open Source Content Application Platform licensed under the GNU/GPL.
+                Neos is based on Flow, a powerful PHP application framework licensed under the MIT license.
+
+                More information and contribution opportunities at https://www.neos.io
+            -->
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="format-detection" content="telephone=no" />
+                <title>{title}</title>
+                {stylesheets}
+                {headScripts}
+                {neosHeaderStuff}
+            </head>
+            <body class={match(mode){
+                  MODE_FRONTEND -> "",
+                  MODE_BACKEND -> "neos-backend",
+            }}>
+                {content}
+                {bodyScripts}
+                {neosBodyStuff}
+            </body>
+        </html>
+    </>
+}

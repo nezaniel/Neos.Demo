@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Neos\Demo\Components\YouTube;
 
 use Neos\Demo\Components\Alert\Alert;
-use PackageFactory\PHPComponentEngine as _;
+use PackageFactory\ComponentEngine as _;
 
 #[\Neos\Flow\Annotations\Proxy(false)]
 final readonly class YouTube implements _\ComponentInterface

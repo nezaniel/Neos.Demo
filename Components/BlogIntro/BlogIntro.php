@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Neos\Demo\Components\BlogIntro;
 
 use Neos\Demo\Components\Headline\Headline;
-use PackageFactory\PHPComponentEngine as _;
+use PackageFactory\ComponentEngine as _;
 
 #[\Neos\Flow\Annotations\Proxy(false)]
 final readonly class BlogIntro implements _\ComponentInterface

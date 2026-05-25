@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Neos\Demo\Components\TextWithImage;
 
 use Neos\Demo\Components\Image\Image;
-use PackageFactory\PHPComponentEngine as _;
+use PackageFactory\ComponentEngine as _;
 
 #[\Neos\Flow\Annotations\Proxy(false)]
 final readonly class TextWithImage implements _\ComponentInterface

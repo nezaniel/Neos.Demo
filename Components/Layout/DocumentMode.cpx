@@ -1,0 +1,4 @@
+export enum DocumentMode {
+    MODE_FRONTEND("frontend")
+    MODE_BACKEND("backend")
+}
