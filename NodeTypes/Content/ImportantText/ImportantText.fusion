@@ -1,0 +1,7 @@
+prototype(Neos.Demo:Content.ImportantText) < prototype(Neos.Neos:ContentComponent) {
+    content = Neos.Neos:Editable {
+        property = 'text'
+    }
+
+    renderer = afx`<Neos.Demo:Presentation.Text {...props} />`
+}

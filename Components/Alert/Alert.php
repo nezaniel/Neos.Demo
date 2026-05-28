@@ -27,6 +27,6 @@ final readonly class Alert implements _\ComponentInterface
 
     public function render(): string
     {
-        return (($this->content !== null) ? '<p class="' . _\Util::joinAttributeValues([(($temp = $this->class) === null ? '' : _\Util::escapeAttributeValue($temp)), 'flex items-center justify-center p-8 bg-orange-400 text-white text-xl']) . '">' . (($temp = $this->content) === null ? '' : $temp->render()) . '</p>' : '');
+        return (((($temp = $this->content) === null) ? false : true) ? '<p class="' . _\Util::joinAttributeValues(((($temp = $this->class) === null) ? '' : _\Util::escapeAttributeValue($temp)), 'flex items-center justify-center p-8 bg-orange-400 text-white text-xl') . '">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</p>' : '');
     }
 }

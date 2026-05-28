@@ -27,6 +27,6 @@ final readonly class Item implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<li><a href="' . _\Util::escapeAttributeValue($this->uri) . '" class="block p-1 hocus:text-slate-900 text-lg lg:text-sm whitespace-nowrap">' . _\Util::escapeRenderValue($this->label) . '</a></li>';
+        return '<li><a href="' . _\Util::escapeAttributeValue($this->uri) . '" class="block p-1 hocus:text-slate-900 text-lg lg:text-sm whitespace-nowrap">' . _\Util::escapeText($this->label) . '</a></li>';
     }
 }

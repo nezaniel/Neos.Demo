@@ -1,13 +1,13 @@
 
-# todo maybe have this component not exposed via export?
+/* todo maybe have this component not exposed via export? */
 
 export component Columns
 {
-    # todo allow to use string literals
-    # sm, md or lg
+    /** todo allow to use string literals
+    * sm, md or lg */
     breakpoint: string
 
-    # Between 2 and 4
+    /**  Between 2 and 4 */
     columns: number
 
     class: ?string
@@ -17,7 +17,7 @@ export component Columns
     render <div
         class={[
             class,
-            "grid grid-cols-1 gap-8 [&>*>:where(p,ul,ol,figure):first-child]:mt-0 [&>*>:where(p,ul,ol,figure):last-child]:mb-0",
+            "grid grid-cols-1 gap-8",
             match (breakpoint) {
                 "sm" -> match (columns) {
                     2 -> "sm:grid-cols-2",

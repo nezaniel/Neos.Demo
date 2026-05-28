@@ -27,6 +27,6 @@ final readonly class Item implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<a href="' . _\Util::escapeAttributeValue($this->uri) . '" class="block py-3 text-slate-600 hocus:text-slate-900">' . _\Util::escapeRenderValue($this->label) . '</a>';
+        return '<a href="' . _\Util::escapeAttributeValue($this->uri) . '" class="block py-3 text-slate-600 hocus:text-slate-900">' . _\Util::escapeText($this->label) . '</a>';
     }
 }

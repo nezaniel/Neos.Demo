@@ -1,6 +1,6 @@
 
 export component Item {
-    # todo get rid of hacky boolean?
+    /* todo get rid of hacky boolean? */
     isFirst: boolean
     uri: string
     label: string

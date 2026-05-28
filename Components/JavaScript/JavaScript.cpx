@@ -1,0 +1,5 @@
+export component JavaScript {
+    uri: string
+
+    render <script defer src={uri}></script>
+}

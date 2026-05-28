@@ -32,18 +32,18 @@ final readonly class BlogIntro implements _\ComponentInterface
             author: $author,
             date: $date,
             _1616_Headline: Headline::create(
+                content: _\SlotComponent::list(
+                    $title,
+                ),
                 tagName: 'h1',
                 tagStyle: 'h1',
                 class: null,
-                content: _\SlotComponent::list(
-                    (($temp = $title) === null ? '' : $temp)
-                ),
             ),
         );
     }
 
     public function render(): string
     {
-        return '<div class="flex flex-wrap justify-center"><div class="text-center lg:w-8/12">' . $this->_1616_Headline->render() . '<p>' . (($temp = $this->abstract) === null ? '' : $temp->render()) . '</p><p>' . (($temp = $this->date) === null ? '' : _\Util::escapeRenderValue($temp)) . ' - ' . (($temp = $this->author) === null ? '' : _\Util::escapeRenderValue($temp)) . '</p></div></div>' . (($this->imageUri !== null) ? '<div class="bg-cover bg-center max-h-48 h-screen print:h-auto print:!bg-none"' . (($this->imageUri !== null) ? ' style="' . 'background-image: url(' . (($temp = $this->imageUri) === null ? '' : _\Util::escapeAttributeValue($temp)) . ');' . '"' : '') . '></div>' : '') . '';
+        return '<div class="flex flex-wrap justify-center"><div class="text-center lg:w-8/12">' . $this->_1616_Headline->render() . '<p>' . ((($temp = $this->abstract) === null) ? '' : $temp->render()) . '</p><p>' . ((($temp = $this->date) === null) ? '' : _\Util::escapeText($temp)) . ' - ' . ((($temp = $this->author) === null) ? '' : _\Util::escapeText($temp)) . '</p></div></div>' . (((($temp = $this->imageUri) === null) ? false : true) ? '<div class="bg-cover bg-center max-h-48 h-screen print:h-auto print:!bg-none"' . (((($temp = $this->imageUri) === null) ? false : true) ? ' style="background-image: url(' . ((($temp = $this->imageUri) === null) ? '' : _\Util::escapeAttributeValue($temp)) . ');"' : '') . '></div>' : '');
     }
 }

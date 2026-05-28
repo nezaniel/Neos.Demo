@@ -10,12 +10,12 @@ use PackageFactory\ComponentEngine as _;
 final readonly class Lead implements _\ComponentInterface
 {
     private function __construct(
-        private _\ComponentInterface $content,
+        private ?_\ComponentInterface $content,
     ) {
     }
 
     public static function create(
-        _\ComponentInterface|string $content,
+        _\ComponentInterface|string|null $content,
     ): self {
         return new self(
             content: is_string($content) ? _\StringComponent::fromString($content) : $content,
@@ -24,6 +24,6 @@ final readonly class Lead implements _\ComponentInterface
 
     public function render(): string
     {
-        return (true ? '<p class="lead">' . $this->content->render() . '</p>' : '');
+        return (((($temp = $this->content) === null) ? false : true) ? '<p class="lead">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</p>' : '');
     }
 }

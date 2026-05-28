@@ -10,12 +10,12 @@ use PackageFactory\ComponentEngine as _;
 final readonly class Text implements _\ComponentInterface
 {
     private function __construct(
-        private _\ComponentInterface $content,
+        private ?_\ComponentInterface $content,
     ) {
     }
 
     public static function create(
-        _\ComponentInterface|string $content,
+        _\ComponentInterface|string|null $content,
     ): self {
         return new self(
             content: is_string($content) ? _\StringComponent::fromString($content) : $content,
@@ -24,6 +24,6 @@ final readonly class Text implements _\ComponentInterface
 
     public function render(): string
     {
-        return $this->content->render();
+        return ((($temp = $this->content) === null) ? '' : $temp->render());
     }
 }

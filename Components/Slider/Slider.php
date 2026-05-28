@@ -10,7 +10,7 @@ use PackageFactory\ComponentEngine as _;
 final readonly class Slider implements _\ComponentInterface
 {
     private function __construct(
-        private _\ComponentInterface $content,
+        private ?_\ComponentInterface $content,
         private ?string $class,
         private ?string $label,
         private bool $sliderIsDecoration,
@@ -18,7 +18,7 @@ final readonly class Slider implements _\ComponentInterface
     }
 
     public static function create(
-        _\ComponentInterface|string $content,
+        _\ComponentInterface|string|null $content,
         ?string $class,
         ?string $label,
         bool $sliderIsDecoration,
@@ -33,6 +33,6 @@ final readonly class Slider implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<section x-data="slider"' . (($temp = $this->label) === null ? '' : ' aria-label="' . _\Util::escapeAttributeValue($temp) . '"') . '' . ($this->sliderIsDecoration ? ' role="group"' : '') . ' class="' . _\Util::joinAttributeValues(['splide', (($temp = $this->class) === null ? '' : _\Util::escapeAttributeValue($temp))]) . '"><div class="splide__track">' . $this->content->render() . '</div></section>';
+        return '<section x-data="slider"' . ((($temp = $this->label) === null) ? '' : ' aria-label="' . _\Util::escapeAttributeValue($temp) . '"') . ($this->sliderIsDecoration ? ' role="group"' : '') . ' class="' . _\Util::joinAttributeValues('splide', ((($temp = $this->class) === null) ? '' : _\Util::escapeAttributeValue($temp))) . '"><div class="splide__track">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</div></section>';
     }
 }

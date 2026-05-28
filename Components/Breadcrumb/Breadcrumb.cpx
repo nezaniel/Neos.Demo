@@ -1,7 +1,7 @@
 export component Breadcrumb {
 
-    # todo @if.hasItems = ${Type.isArray(this.menuItems) && Array.length(this.menuItems)}
-    # todo use content: Item[]
+    /* todo @if.hasItems = ${Type.isArray(this.menuItems) && Array.length(this.menuItems)}
+    * todo use content: Item[] */
     content: slot
     class: ?string
 

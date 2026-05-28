@@ -11,13 +11,13 @@ final readonly class Container implements _\ComponentInterface
 {
     private function __construct(
         private ?string $class,
-        private _\ComponentInterface $content,
+        private ?_\ComponentInterface $content,
     ) {
     }
 
     public static function create(
         ?string $class,
-        _\ComponentInterface|string $content,
+        _\ComponentInterface|string|null $content,
     ): self {
         return new self(
             class: $class,
@@ -27,6 +27,6 @@ final readonly class Container implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<div class="' . _\Util::joinAttributeValues(['grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 not-prose', (($temp = $this->class) === null ? '' : _\Util::escapeAttributeValue($temp))]) . '">' . $this->content->render() . '</div>';
+        return '<div class="' . _\Util::joinAttributeValues('grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 not-prose', ((($temp = $this->class) === null) ? '' : _\Util::escapeAttributeValue($temp))) . '">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</div>';
     }
 }

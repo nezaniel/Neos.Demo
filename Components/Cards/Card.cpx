@@ -4,16 +4,16 @@ export component Card {
     uri: string
     title: string
     content: slot
-    # todo different formats
+    /* todo different formats */
     date: ?string
-    # todo Date.format(props.date, 'Y-m-d')
+    /* todo Date.format(props.date, 'Y-m-d') */
     authorName: ?string
     imageUri: ?string
     class: ?string
-    # todo {I18n.translate('Neos.Demo:Presentation.Cards:cards.moreButton')}
+    /* todo {I18n.translate('Neos.Demo:Presentation.Cards:cards.moreButton')} */
     moreLabel: ?string
 
-    # todo StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg')
+    /* todo StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg') */
 
     render
         <div

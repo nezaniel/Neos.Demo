@@ -13,7 +13,7 @@ final readonly class Item implements _\ComponentInterface
         private ?string $videoUri,
         private ?string $youtubeId,
         private ?string $vimdeoId,
-        private _\ComponentInterface $content,
+        private ?_\ComponentInterface $content,
         private ?string $class,
     ) {
     }
@@ -22,7 +22,7 @@ final readonly class Item implements _\ComponentInterface
         ?string $videoUri,
         ?string $youtubeId,
         ?string $vimdeoId,
-        _\ComponentInterface|string $content,
+        _\ComponentInterface|string|null $content,
         ?string $class,
     ): self {
         return new self(
@@ -36,6 +36,6 @@ final readonly class Item implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<li' . (($temp = $this->videoUri) === null ? '' : ' data-splide-html-video="' . _\Util::escapeAttributeValue($temp) . '"') . '' . (($this->youtubeId !== null) ? ' data-splide-youtube="' . 'https://www.youtube.com/watch?v=' . (($temp = $this->youtubeId) === null ? '' : _\Util::escapeAttributeValue($temp)) . '"' : '') . '' . (($this->vimdeoId !== null) ? ' data-splide-vimeo="' . 'https://vimeo.com/' . (($temp = $this->vimdeoId) === null ? '' : _\Util::escapeAttributeValue($temp)) . '"' : '') . ' class="' . _\Util::joinAttributeValues(['splide__slide', (($this->class !== null) ? (($temp = $this->class) === null ? '' : _\Util::escapeAttributeValue($temp)) : 'flex flex-col items-center justify-center')]) . '">' . $this->content->render() . '</li>';
+        return '<li' . ((($temp = $this->videoUri) === null) ? '' : ' data-splide-html-video="' . _\Util::escapeAttributeValue($temp) . '"') . (((($temp = $this->youtubeId) === null) ? false : true) ? ' data-splide-youtube="https://www.youtube.com/watch?v=' . ((($temp = $this->youtubeId) === null) ? '' : _\Util::escapeAttributeValue($temp)) . '"' : '') . (((($temp = $this->vimdeoId) === null) ? false : true) ? ' data-splide-vimeo="https://vimeo.com/' . ((($temp = $this->vimdeoId) === null) ? '' : _\Util::escapeAttributeValue($temp)) . '"' : '') . ' class="' . _\Util::joinAttributeValues('splide__slide', (((($temp = $this->class) === null) ? false : true) ? ((($temp = $this->class) === null) ? '' : _\Util::escapeAttributeValue($temp)) : 'flex flex-col items-center justify-center')) . '">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</li>';
     }
 }

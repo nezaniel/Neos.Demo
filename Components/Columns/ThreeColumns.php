@@ -26,7 +26,7 @@ final readonly class ThreeColumns implements _\ComponentInterface
                 columns: 3,
                 class: null,
                 content: _\SlotComponent::list(
-                    (($temp = $content) === null ? '' : $temp)
+                    $content,
                 ),
             ),
         );
@@ -34,6 +34,6 @@ final readonly class ThreeColumns implements _\ComponentInterface
 
     public function render(): string
     {
-        return (($this->content !== null) ? $this->_810_Columns->render() : '');
+        return (((($temp = $this->content) === null) ? false : true) ? $this->_810_Columns->render() : '');
     }
 }

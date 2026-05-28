@@ -18,7 +18,7 @@ export component YouTube
             </iframe>
         </figure>
         : (inBackend
-            # todo translation
+            /** todo translation */
             ? <Alert
                 class="aspect-video"
                 content="Neos.Demo:NodeTypes.Content.YouTube:error.no.videoid"

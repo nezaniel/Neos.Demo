@@ -1,11 +1,11 @@
 export component Footer {
-    # todo menuItems: Items[]
-    # how to todo only display menuItems collection if not empty???
+    /* todo menuItems: Items[]
+    * how to todo only display menuItems collection if not empty??? */
     menuItems: ?slot
     content: ?slot
 
-    # todo @if.hasMenuItemsOrContent = ${this._hasMenuItems || this.content}
-    # todo inline comment support <!-- This element is needed to set the footer at the bottom of the page -->
+    /* todo @if.hasMenuItemsOrContent = ${this._hasMenuItems || this.content}
+    * todo inline comment support <!-- This element is needed to set the footer at the bottom of the page --> */
 
     render <>
         <div aria-hidden="true" class="flex-1 print:hidden"></div>

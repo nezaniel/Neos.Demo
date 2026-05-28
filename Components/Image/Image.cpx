@@ -11,7 +11,7 @@ export component Image {
 
     renderDummyImage: boolean
 
-    # todo implement renderDummyImage from outside: StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg')
+    /** todo implement renderDummyImage from outside: StaticResource.uri('Neos.Neos', 'Public/Images/dummy-image.svg') */
     render <figure class={class}>
         <img
             src={src}

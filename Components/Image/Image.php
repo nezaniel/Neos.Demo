@@ -43,6 +43,6 @@ final readonly class Image implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<figure' . (($temp = $this->class) === null ? '' : ' class="' . _\Util::escapeAttributeValue($temp) . '"') . '><img src="' . _\Util::escapeAttributeValue($this->src) . '"' . (($temp = $this->title) === null ? '' : ' title="' . _\Util::escapeAttributeValue($temp) . '"') . '' . (($temp = $this->alt) === null ? '' : ' alt="' . _\Util::escapeAttributeValue($temp) . '"') . '' . (($temp = $this->imageClass) === null ? '' : ' class="' . _\Util::escapeAttributeValue($temp) . '"') . ' />' . (($this->hasCaption && ($this->caption !== null)) ? '<figcaption>' . (($temp = $this->caption) === null ? '' : $temp->render()) . '</figcaption>' : '') . '</figure>';
+        return '<figure' . ((($temp = $this->class) === null) ? '' : ' class="' . _\Util::escapeAttributeValue($temp) . '"') . '><img src="' . _\Util::escapeAttributeValue($this->src) . '"' . ((($temp = $this->title) === null) ? '' : ' title="' . _\Util::escapeAttributeValue($temp) . '"') . ((($temp = $this->alt) === null) ? '' : ' alt="' . _\Util::escapeAttributeValue($temp) . '"') . ((($temp = $this->imageClass) === null) ? '' : ' class="' . _\Util::escapeAttributeValue($temp) . '"') . ' />' . ((((($temp = $this->hasCaption) === null) ? false : $temp) && ((($temp = $this->caption) === null) ? false : true)) ? '<figcaption>' . ((($temp = $this->caption) === null) ? '' : $temp->render()) . '</figcaption>' : '') . '</figure>';
     }
 }

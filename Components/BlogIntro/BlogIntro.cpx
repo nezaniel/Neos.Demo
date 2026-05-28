@@ -9,8 +9,8 @@ export component BlogIntro
     author: ?string
     date: ?string
 
-    # todo date format from outside Date.format(date, 'd.m.Y')
-    # todo allow to omit class={null}? for Headline
+    /* todo date format from outside Date.format(date, 'd.m.Y')
+    * todo allow to omit class={null}? for Headline */
     render <>
         <div class="flex flex-wrap justify-center">
             <div class="text-center lg:w-8/12">

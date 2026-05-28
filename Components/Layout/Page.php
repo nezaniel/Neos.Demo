@@ -10,18 +10,18 @@ use PackageFactory\ComponentEngine as _;
 final readonly class Page implements _\ComponentInterface
 {
     private function __construct(
-        private _\ComponentInterface $header,
-        private _\ComponentInterface $breadcrumb,
-        private _\ComponentInterface $content,
-        private _\ComponentInterface $footer,
+        private ?_\ComponentInterface $header,
+        private ?_\ComponentInterface $breadcrumb,
+        private ?_\ComponentInterface $content,
+        private ?_\ComponentInterface $footer,
     ) {
     }
 
     public static function create(
-        _\ComponentInterface|string $header,
-        _\ComponentInterface|string $breadcrumb,
-        _\ComponentInterface|string $content,
-        _\ComponentInterface|string $footer,
+        _\ComponentInterface|string|null $header,
+        _\ComponentInterface|string|null $breadcrumb,
+        _\ComponentInterface|string|null $content,
+        _\ComponentInterface|string|null $footer,
     ): self {
         return new self(
             header: is_string($header) ? _\StringComponent::fromString($header) : $header,
@@ -33,6 +33,6 @@ final readonly class Page implements _\ComponentInterface
 
     public function render(): string
     {
-        return '' . $this->header->render() . '' . $this->breadcrumb->render() . '<main class="content prose">' . $this->content->render() . '</main>' . $this->footer->render() . '';
+        return ((($temp = $this->header) === null) ? '' : $temp->render()) . ((($temp = $this->breadcrumb) === null) ? '' : $temp->render()) . '<main class="content prose">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</main>' . ((($temp = $this->footer) === null) ? '' : $temp->render());
     }
 }

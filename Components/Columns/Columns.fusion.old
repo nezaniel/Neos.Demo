@@ -1,7 +1,7 @@
 prototype(Neos.Demo:Presentation.Columns) < prototype(Neos.Fusion:Component) {
     tagName = 'div'
 
-    // sm, md or lg
+    //sm, md or lg
     breakpoint = 'sm'
 
     // Between 2 and 4

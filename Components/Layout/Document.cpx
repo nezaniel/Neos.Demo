@@ -1,24 +1,19 @@
 from "./DocumentMode.cpx" import { DocumentMode }
+from "../JavaScript/JavaScript.cpx" import { JavaScript }
+from "../Stylesheet/Stylesheet.cpx" import { Stylesheet }
 
 export component Document {
     title: string
-    stylesheets: slot
-    headScripts: slot
+    stylesheets: Stylesheet[]
+    headScripts: JavaScript[]
     neosHeaderStuff: slot
     content: slot
-    bodyScripts: slot
     neosBodyStuff: slot
     mode: DocumentMode
+    debug: ?string
 
     render <>
-        <!DOCTYPE html />
         <html>
-            <!--
-                This website is powered by Neos, the Open Source Content Application Platform licensed under the GNU/GPL.
-                Neos is based on Flow, a powerful PHP application framework licensed under the MIT license.
-
-                More information and contribution opportunities at https://www.neos.io
-            -->
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,11 +24,10 @@ export component Document {
                 {neosHeaderStuff}
             </head>
             <body class={match(mode){
-                  MODE_FRONTEND -> "",
-                  MODE_BACKEND -> "neos-backend",
+                DocumentMode.MODE_FRONTEND -> "wat",
+                DocumentMode.MODE_BACKEND -> "neos-backend",
             }}>
                 {content}
-                {bodyScripts}
                 {neosBodyStuff}
             </body>
         </html>

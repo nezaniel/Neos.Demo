@@ -3,20 +3,20 @@ export component Slider {
     content: slot
     class: ?string
 
-    # todo no arrays and spreads! attributes = Neos.Fusion:DataStructure
-    # options = Neos.Fusion:DataStructure {
-    #     # The gap between slides. The CSS format is acceptable, such as 1em.
-    #     gap = 12
-    # }
-    # i18n = Neos.Fusion:Map {
-    #     items = ${['prev', 'next', 'first', 'last', 'slideX', 'pageX', 'play', 'pause', 'carousel', 'select', 'slide', 'slideLabel', 'playVideo']}
-    #     keyRenderer = ${item}
-    #     itemRenderer = ${I18n.translate('Neos.Demo:Main:splide.' + item)}
-    # }
-    # data-splide = ${Json.stringify(Array.concat({i18n:props.i18n}, props.options))}
+    /* todo no arrays and spreads! attributes = Neos.Fusion:DataStructure
+    * options = Neos.Fusion:DataStructure {
+    *     # The gap between slides. The CSS format is acceptable, such as 1em.
+    *     gap = 12
+    * }
+    * i18n = Neos.Fusion:Map {
+    *     items = ${['prev', 'next', 'first', 'last', 'slideX', 'pageX', 'play', 'pause', 'carousel', 'select', 'slide', 'slideLabel', 'playVideo']}
+    *     keyRenderer = ${item}
+    *     itemRenderer = ${I18n.translate('Neos.Demo:Main:splide.' + item)}
+    * }
+    * data-splide = ${Json.stringify(Array.concat({i18n:props.i18n}, props.options))} */
 
     label: ?string
-    # todo default false
+    /* todo default false */
     sliderIsDecoration: boolean
 
     render
@@ -32,31 +32,29 @@ export component Slider {
         </section>
 }
 
-# export struct Translations {
-#     prev: string
-#     next: string
-#     first: string
-#     last: string
-#     slideX: string
-#     pageX: string
-#     play: string
-#     pause: string
-#     carousel: string
-#     select: string
-#     slide: string
-#     slideLabel: string
-#     playVideo: string
-# }
-#
-#
-#
-#
-# export component App {
-#     nodeAggregateId: string
-#     endpoint: string
-#     render <div id="app" data-props="{node: nodeAggregateId, endpointUri: endpoint}"></div>
-# }
-#
-#
-#
+/* export struct Translations {
+*     prev: string
+*     next: string
+*     first: string
+*     last: string
+*     slideX: string
+*     pageX: string
+*     play: string
+*     pause: string
+*     carousel: string
+*     select: string
+*     slide: string
+*     slideLabel: string
+*     playVideo: string
+* }
+*
+*
+*
+*
+* export component App {
+*     nodeAggregateId: string
+*     endpoint: string
+*     render <div id="app" data-props="{node: nodeAggregateId, endpointUri: endpoint}"></div>
+* }
+*/
 

@@ -1,23 +1,23 @@
 
 export component Item {
 
-    # todo x-bind:class={"isCurrentPage('" + item.uri + "')&&'text-light'"}
+    /** todo x-bind:class={"isCurrentPage('" + item.uri + "')&&'text-light'"} */
 
     uri: string
     label: string
 
-    # todo subitems only if there are any
-    # <ul @if={Type.isArray(subItems) && Array.length(subItems)} class="lg:hidden">
-    #     <Neos.Fusion:Loop items={subItems}>
-    #         <li>
-    #             <a
-    #                 href={uri}
-    #                 x-bind:class={"isCurrentPage('" + uri + "')&&'text-light'"}
-    #             class="block text-base p-1 whitespace-nowrap"
-    #             >{item.label}</a>
-    #         </li>
-    #     </Neos.Fusion:Loop>
-    # </ul>
+    /* todo subitems only if there are any
+    * <ul @if={Type.isArray(subItems) && Array.length(subItems)} class="lg:hidden">
+    *     <Neos.Fusion:Loop items={subItems}>
+    *         <li>
+    *             <a
+    *                 href={uri}
+    *                 x-bind:class={"isCurrentPage('" + uri + "')&&'text-light'"}
+    *             class="block text-base p-1 whitespace-nowrap"
+    *             >{item.label}</a>
+    *         </li>
+    *     </Neos.Fusion:Loop>
+    * </ul> */
 
     render <li>
         <a href={uri} class="block p-1 hocus:text-slate-900 text-lg lg:text-sm whitespace-nowrap">{label}</a>

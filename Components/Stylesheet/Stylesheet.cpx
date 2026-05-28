@@ -1,0 +1,5 @@
+export component Stylesheet {
+    uri: string
+
+    render <link rel="stylesheet" href={uri} />
+}

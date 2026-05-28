@@ -1,14 +1,14 @@
 
 export component Header {
-    # todo find better way to use svgs?
+    /** todo find better way to use svgs? */
     logo: slot
     homeUri: string
     menuItems: slot
 
-    # todo Neos.Fusion:Augmenter hack replacement? -> how to style svg.
-    # <Neos.Fusion:Augmenter class="h-14 w-auto">
-    #     {props.logo || props.defaultLogo}
-    # </Neos.Fusion:Augmenter>
+    /** todo Neos.Fusion:Augmenter hack replacement? -> how to style svg.
+    * <Neos.Fusion:Augmenter class="h-14 w-auto">
+    *     {props.logo || props.defaultLogo}
+    * </Neos.Fusion:Augmenter> */
 
     render
         <header class="relative lg:sticky print:hidden z-50 top-0 bg-white/90 text-sm supports-backdrop-blur:bg-white/80 backdrop-blur-sm transition-shadow">

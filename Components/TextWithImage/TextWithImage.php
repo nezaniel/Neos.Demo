@@ -35,17 +35,17 @@ final readonly class TextWithImage implements _\ComponentInterface
                 src: $src,
                 alt: $alt,
                 title: $title,
+                class: 'md:mb-0',
+                imageClass: 'w-full max-w-none',
                 hasCaption: $hasCaption,
                 caption: $caption,
                 renderDummyImage: $renderDummyImage,
-                class: 'md:mb-0',
-                imageClass: 'w-full max-w-none',
             ),
         );
     }
 
     public function render(): string
     {
-        return (((($this->text !== null) || true) || $this->renderDummyImage) ? '<div class="md:flex md:flex-wrap md:gap-4 md:flex-row">' . $this->_1912_Image->render() . '<div class="min-w-[30ch] flex-1">' . (($temp = $this->text) === null ? '' : $temp->render()) . '</div></div>' : '');
+        return (((((($temp = $this->text) === null) ? false : true) || true) || $this->renderDummyImage) ? '<div class="md:flex md:flex-wrap md:gap-4 md:flex-row">' . $this->_1912_Image->render() . '<div class="min-w-[30ch] flex-1">' . ((($temp = $this->text) === null) ? '' : $temp->render()) . '</div></div>' : '');
     }
 }

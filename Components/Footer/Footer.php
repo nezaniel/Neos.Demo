@@ -27,6 +27,6 @@ final readonly class Footer implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<div aria-hidden="true" class="flex-1 print:hidden"></div><footer class="' . _\Util::joinAttributeValues(['mt-12 text-sm print:border-t print:border-slate-200/80', (($this->menuItems !== null) ? 'border-t border-slate-200/80' : '')]) . '">' . (($this->menuItems !== null) ? '<nav class="content py-5 flex flex-wrap gap-x-10 print:hidden">' . (($temp = $this->menuItems) === null ? '' : $temp->render()) . '</nav>' : '') . '' . (($this->content !== null) ? '<div class="py-5 bg-slate-100 shadow-inner empty:hidden print:bg-transparent print:shadow-none">' . (($temp = $this->content) === null ? '' : $temp->render()) . '</div>' : '') . '</footer>';
+        return '<div aria-hidden="true" class="flex-1 print:hidden"></div><footer class="' . _\Util::joinAttributeValues('mt-12 text-sm print:border-t print:border-slate-200/80', (((($temp = $this->menuItems) === null) ? false : true) ? 'border-t border-slate-200/80' : '')) . '">' . (((($temp = $this->menuItems) === null) ? false : true) ? '<nav class="content py-5 flex flex-wrap gap-x-10 print:hidden">' . ((($temp = $this->menuItems) === null) ? '' : $temp->render()) . '</nav>' : '') . (((($temp = $this->content) === null) ? false : true) ? '<div class="py-5 bg-slate-100 shadow-inner empty:hidden print:bg-transparent print:shadow-none">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</div>' : '') . '</footer>';
     }
 }

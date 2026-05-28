@@ -10,13 +10,13 @@ use PackageFactory\ComponentEngine as _;
 final readonly class Breadcrumb implements _\ComponentInterface
 {
     private function __construct(
-        private _\ComponentInterface $content,
+        private ?_\ComponentInterface $content,
         private ?string $class,
     ) {
     }
 
     public static function create(
-        _\ComponentInterface|string $content,
+        _\ComponentInterface|string|null $content,
         ?string $class,
     ): self {
         return new self(
@@ -27,6 +27,6 @@ final readonly class Breadcrumb implements _\ComponentInterface
 
     public function render(): string
     {
-        return '<nav class="' . _\Util::joinAttributeValues([(($this->class !== null) ? (($temp = $this->class) === null ? '' : _\Util::escapeAttributeValue($temp)) : 'content text-sm mb-4'), 'print:hidden']) . '"><ul class="flex flex-wrap m-0">' . $this->content->render() . '</ul></nav>';
+        return '<nav class="' . _\Util::joinAttributeValues((((($temp = $this->class) === null) ? false : true) ? ((($temp = $this->class) === null) ? '' : _\Util::escapeAttributeValue($temp)) : 'content text-sm mb-4'), 'print:hidden') . '"><ul class="flex flex-wrap m-0">' . ((($temp = $this->content) === null) ? '' : $temp->render()) . '</ul></nav>';
     }
 }
